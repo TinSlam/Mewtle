@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="enginePrecompiledHeaders">
+      <UniqueIdentifier>{4BBABECC-37DF-0D4D-602A-F3DC4CAE0C6B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle">
+      <UniqueIdentifier>{2AFE4120-16B6-836D-7FBD-5CC96B941E5E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\AI">
+      <UniqueIdentifier>{83160150-EFD6-7C86-B811-C6032491C162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\Core">
+      <UniqueIdentifier>{C28CA254-2E18-1019-3729-930DA3336C19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\EventManager">
+      <UniqueIdentifier>{76155D35-E24C-A5CC-EB56-09F0570DCCC5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\EventManager\Keyboard">
+      <UniqueIdentifier>{B6CE0B63-A21F-F7A4-CB83-E566B7338A0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\GameElements">
+      <UniqueIdentifier>{30A319AA-9CDA-6141-A5E4-C564119B883A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\LoggingSystem">
+      <UniqueIdentifier>{65C41FA8-51E9-6E28-7A34-54B866B86D46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\ResourceManager">
+      <UniqueIdentifier>{3CFB1FA8-280B-CC78-91C4-30977DF3BA11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\ResourceManager\Model">
+      <UniqueIdentifier>{7CE1E8DA-6832-D41C-9196-C2DE7D466786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\ResourceManager\Texture">
+      <UniqueIdentifier>{9C9C9D3D-88D8-A0A7-F1EA-B89EDD4549C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\UI">
+      <UniqueIdentifier>{17190150-83D9-7C86-4C14-C603B893C162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\UI\Button">
+      <UniqueIdentifier>{42850191-2E14-8B5A-D732-9F55C3A09B00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\UI\Textbox">
+      <UniqueIdentifier>{5414C0F5-C080-7BF0-8974-134EF59F9D58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\Utils">
+      <UniqueIdentifier>{0A773CEA-F66F-5B3C-1FA2-40C10BFA3A48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\Utils\3DUtils">
+      <UniqueIdentifier>{61677226-4D8C-C1A6-76D7-A636625BC0C4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mewtle\Utils\Math">
+      <UniqueIdentifier>{23D27060-8F3E-2C5B-5832-C4B8C45D4EC3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="enginePrecompiledHeaders\PrecompiledHeaders.h">
+      <Filter>enginePrecompiledHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\AI\AI.h">
+      <Filter>src\Mewtle\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Core\Core.h">
+      <Filter>src\Mewtle\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Core\Engine.h">
+      <Filter>src\Mewtle\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Core\EntryPoint.h">
+      <Filter>src\Mewtle\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Core\Game.h">
+      <Filter>src\Mewtle\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Core\MyGLRenderer.h">
+      <Filter>src\Mewtle\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\EventManager\Event.h">
+      <Filter>src\Mewtle\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\EventManager\EventHandler.h">
+      <Filter>src\Mewtle\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\EventManager\Keyboard\KeyboardUtils.h">
+      <Filter>src\Mewtle\EventManager\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\GameElements\Camera.h">
+      <Filter>src\Mewtle\GameElements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\GameElements\Entity.h">
+      <Filter>src\Mewtle\GameElements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\GameElements\State.h">
+      <Filter>src\Mewtle\GameElements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\LoggingSystem\Log.h">
+      <Filter>src\Mewtle\LoggingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\ResourceManager\Model\Model3D.h">
+      <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\ResourceManager\Model\ModelLoader.h">
+      <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\ResourceManager\Model\ModelPremade.h">
+      <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\ResourceManager\Model\ObjParser.h">
+      <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\ResourceManager\Texture\Texture.h">
+      <Filter>src\Mewtle\ResourceManager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\ResourceManager\Texture\stb_image.h">
+      <Filter>src\Mewtle\ResourceManager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\UI\Button\Button.h">
+      <Filter>src\Mewtle\UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\UI\Button\ButtonRectangle.h">
+      <Filter>src\Mewtle\UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\UI\GUIElement.h">
+      <Filter>src\Mewtle\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\UI\Label.h">
+      <Filter>src\Mewtle\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\UI\Textbox\Textbox.h">
+      <Filter>src\Mewtle\UI\Textbox</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Utils\3DUtils\OpenGLCoords.h">
+      <Filter>src\Mewtle\Utils\3DUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Utils\Math\Line3D.h">
+      <Filter>src\Mewtle\Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mewtle\Utils\Utils.h">
+      <Filter>src\Mewtle\Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="enginePrecompiledHeaders\PrecompiledHeaders.cpp">
+      <Filter>enginePrecompiledHeaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\AI\AI.cpp">
+      <Filter>src\Mewtle\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\Core\Game.cpp">
+      <Filter>src\Mewtle\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\Core\MyGLRenderer.cpp">
+      <Filter>src\Mewtle\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\EventManager\Event.cpp">
+      <Filter>src\Mewtle\EventManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\EventManager\EventHandler.cpp">
+      <Filter>src\Mewtle\EventManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\EventManager\Keyboard\KeyboardUtils.cpp">
+      <Filter>src\Mewtle\EventManager\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\GameElements\Camera.cpp">
+      <Filter>src\Mewtle\GameElements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\GameElements\Entity.cpp">
+      <Filter>src\Mewtle\GameElements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\GameElements\State.cpp">
+      <Filter>src\Mewtle\GameElements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\LoggingSystem\Log.cpp">
+      <Filter>src\Mewtle\LoggingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\ResourceManager\Model\Model3D.cpp">
+      <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\ResourceManager\Model\ModelLoader.cpp">
+      <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\ResourceManager\Model\ModelPremade.cpp">
+      <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\ResourceManager\Texture\Texture.cpp">
+      <Filter>src\Mewtle\ResourceManager\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\ResourceManager\Texture\stb_image.cpp">
+      <Filter>src\Mewtle\ResourceManager\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\UI\Button\Button.cpp">
+      <Filter>src\Mewtle\UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\UI\Button\ButtonRectangle.cpp">
+      <Filter>src\Mewtle\UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\UI\GUIElement.cpp">
+      <Filter>src\Mewtle\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\UI\Label.cpp">
+      <Filter>src\Mewtle\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\UI\Textbox\Textbox.cpp">
+      <Filter>src\Mewtle\UI\Textbox</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\Utils\3DUtils\OpenGLCoords.cpp">
+      <Filter>src\Mewtle\Utils\3DUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\Utils\Math\Line3D.cpp">
+      <Filter>src\Mewtle\Utils\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\Utils\Utils.cpp">
+      <Filter>src\Mewtle\Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
