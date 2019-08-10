@@ -159,6 +159,7 @@
     <ClInclude Include="src\Mewtle\ResourceManager\Model\ModelLoader.h" />
     <ClInclude Include="src\Mewtle\ResourceManager\Model\ModelPremade.h" />
     <ClInclude Include="src\Mewtle\ResourceManager\Model\ObjParser.h" />
+    <ClInclude Include="src\Mewtle\ResourceManager\Texture\Material.h" />
     <ClInclude Include="src\Mewtle\ResourceManager\Texture\Texture.h" />
     <ClInclude Include="src\Mewtle\ResourceManager\Texture\stb_image.h" />
     <ClInclude Include="src\Mewtle\UI\Button\Button.h" />
@@ -187,6 +188,7 @@
     <ClCompile Include="src\Mewtle\ResourceManager\Model\Model3D.cpp" />
     <ClCompile Include="src\Mewtle\ResourceManager\Model\ModelLoader.cpp" />
     <ClCompile Include="src\Mewtle\ResourceManager\Model\ModelPremade.cpp" />
+    <ClCompile Include="src\Mewtle\ResourceManager\Texture\Material.cpp" />
     <ClCompile Include="src\Mewtle\ResourceManager\Texture\Texture.cpp" />
     <ClCompile Include="src\Mewtle\ResourceManager\Texture\stb_image.cpp" />
     <ClCompile Include="src\Mewtle\UI\Button\Button.cpp" />

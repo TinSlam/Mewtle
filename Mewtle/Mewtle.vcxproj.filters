@@ -114,6 +114,9 @@
     <ClInclude Include="src\Mewtle\ResourceManager\Model\ObjParser.h">
       <Filter>src\Mewtle\ResourceManager\Model</Filter>
     </ClInclude>
+    <ClInclude Include="src\Mewtle\ResourceManager\Texture\Material.h">
+      <Filter>src\Mewtle\ResourceManager\Texture</Filter>
+    </ClInclude>
     <ClInclude Include="src\Mewtle\ResourceManager\Texture\Texture.h">
       <Filter>src\Mewtle\ResourceManager\Texture</Filter>
     </ClInclude>
@@ -187,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="src\Mewtle\ResourceManager\Model\ModelPremade.cpp">
       <Filter>src\Mewtle\ResourceManager\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mewtle\ResourceManager\Texture\Material.cpp">
+      <Filter>src\Mewtle\ResourceManager\Texture</Filter>
     </ClCompile>
     <ClCompile Include="src\Mewtle\ResourceManager\Texture\Texture.cpp">
       <Filter>src\Mewtle\ResourceManager\Texture</Filter>

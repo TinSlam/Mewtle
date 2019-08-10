@@ -22,6 +22,15 @@ namespace Mewtle{
 		this->width = width;
 		this->height = height;
 		this->depth = depth;
+		
+		if(model->isTextured()){
+			materials = new GLuint[model->getMaterial()->getMaterialCount()];
+			for(int i = 0; i < model->getMaterial()->getMaterialCount(); i++){
+				materials[i] = model->getMaterial()->getMaterials()[i];
+			}
+			if(texture != nullptr)
+				coverWithMaterial(texture);
+		}
 
 		adjustOpenGLCoords();
 
@@ -31,6 +40,8 @@ namespace Mewtle{
 
 	Entity::~Entity(){
 		delete(openGLCoords);
+		if(materials != nullptr)
+			delete(materials);
 	}
 
 	Model3D* Entity::getModel(){
@@ -58,7 +69,21 @@ namespace Mewtle{
 	}
 
 	void Entity::render(float alpha){
-		MyGLRenderer::drawEntity(this, alpha);
+		if(model->isTextured()){
+			MyGLRenderer::renderTexturedModel(model, model->getMaterial(), materials,
+				openGLCoords->getX() + openGLCoords->getWidth() / 2,
+				openGLCoords->getY() - openGLCoords->getHeight() / 2,
+				openGLCoords->getZ() + openGLCoords->getDepth() / 2,
+				openGLCoords->getRotX(),
+				openGLCoords->getRotY(),
+				openGLCoords->getRotZ(),
+				openGLCoords->getScaleX(),
+				openGLCoords->getScaleY(),
+				openGLCoords->getScaleZ(),
+				alpha);
+		}else{
+			MyGLRenderer::drawEntity(this, alpha);
+		}
 	}
 
 	OpenGLCoords* Entity::getOpenGLCoords(){
@@ -155,6 +180,16 @@ namespace Mewtle{
 
 	int Entity::getTextureId(){
 		return texture->getTextureId();
+	}
+
+	void Entity::switchMaterial(int index, Texture* texture){
+		if(index >= 0 && index < model->getMaterial()->getMaterialCount())
+			materials[index] = texture->getId();
+	}
+
+	void Entity::coverWithMaterial(Texture* texture){
+		for(int i = 0; i < model->getMaterial()->getMaterialCount(); i++)
+			materials[i] = texture->getId();
 	}
 
 	void Entity::adjustOpenGLCoords(){

@@ -2,7 +2,7 @@
 
 #include "Mewtle.h" // The engine interface.
 
-#include <Mewtle/Mewtle_Core/EntryPoint.h>
+#include <Mewtle/Core/EntryPoint.h>
 
 Mewtle::State* Mewtle::createInitialState(){
 	// Return your initial state.

@@ -73,3 +73,47 @@ project "Mewtle"
 		defines "MTL_DIST"
 		runtime "Release"
 		optimize "on"
+
+-- Remove this after integration is over.
+--project "ObjParser"
+--	location "ObjParser"
+--	kind "StaticLib"
+--	language "C++"
+--	cppdialect "C++17"
+--	staticruntime "on"
+
+--	targetdir("bin/" .. outputdir .. "/%{prj.name}")
+--	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
+
+--	files{
+--		"%{prj.name}/**.h",
+--		"%{prj.name}/**.cpp"
+--	}
+
+	--postbuildcommands{
+	--	("{COPY} %{cfg.buildtarget.relpath} Mewtle/dependencies/ObjParser/ObjParser.lib")
+	--}
+
+--	filter "system:windows"
+--		cppdialect "C++17"
+--		staticruntime "On"
+--		systemversion "latest"
+
+--		defines{
+--			"MTL_PLATFORM_WINDOWS"
+--		}
+
+--	filter "configurations:Debug"
+--		defines "MTL_DEBUG"
+--		runtime "Debug"
+--		symbols "on"
+
+--	filter "configurations:Release"
+--		defines "MTL_RELEASE"
+--		runtime "Release"
+--		optimize "on"
+
+--	filter "configurations:Dist"
+--		defines "MTL_DIST"
+--		runtime "Release"
+--		optimize "on"		

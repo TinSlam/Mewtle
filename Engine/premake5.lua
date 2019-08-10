@@ -1,4 +1,4 @@
-projectName = "Done"
+projectName = "UnnamedProject"
 
 workspace (projectName)
 	architecture "x64"
@@ -34,7 +34,8 @@ project (projectName)
 	includedirs{
 		"Mewtle/includes",
 		"Mewtle/dependencies",
-		"Mewtle/precompiledHeaders"
+		"Mewtle/precompiledHeaders",
+		(projectName .. "/src")
 	}
 
 	links{
@@ -66,7 +67,10 @@ project (projectName)
 
 os.execute("mkdir " .. projectName)
 
-os.copyfile("Mewtle/EntryPoint.cpp", (projectName .. "/EntryPoint.cpp"))
+if(not os.isfile(projectName .. "\\EntryPoint.cpp")) then
+	os.copyfile("Mewtle/EntryPoint.cpp", (projectName .. "/EntryPoint.cpp"))
+end
+
 os.execute(("mkdir " .. projectName .. "\\src"))
 os.execute(("mkdir bin\\Debug-windows-x86_64\\" .. projectName))
 os.execute(("mkdir bin\\Release-windows-x86_64\\" .. projectName))

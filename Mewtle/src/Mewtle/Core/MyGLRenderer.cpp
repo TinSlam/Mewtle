@@ -54,6 +54,8 @@ namespace Mewtle{
 	glm::vec4 MyGLRenderer::lightUniform;
 
 	void MyGLRenderer::start(std::function<void()> clientInit, std::function<void()> clientTick, std::function<void()> clientRender, State* initState){
+		Game::width = width;
+		Game::height = height;
 		initializeGlfw();
 		createWindow();
 		initializeGlew();
@@ -86,8 +88,8 @@ namespace Mewtle{
 		initTextRenderer();
 
 		disableLighting();
-		game.init(initState);
 		clientInit();
+		game.init(initState);
 
 		glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 		glClearColor(backgroundColorRed, backgroundColorGreen, backgroundColorBlue, backgroundColorAlpha);
@@ -575,10 +577,8 @@ namespace Mewtle{
 		glGenTextures(1, &textureID);
 
 		glBindTexture(GL_TEXTURE_2D, textureID);
-
 		int width, height;
-		unsigned char* image = stbi_load(path, &width, &height, nullptr, 0); 
-		//unsigned char* image = SOIL_load_image(path, &width, &height, nullptr, SOIL_LOAD_RGBA);
+		unsigned char* image = stbi_load(path, &width, &height, nullptr, STBI_rgb_alpha);
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -625,6 +625,43 @@ namespace Mewtle{
 		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 32, reinterpret_cast<const void *>(12));
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 32, reinterpret_cast<const void *>(24));
 		glDrawElements(GL_TRIANGLES, entity->getModel()->getIboLength(), GL_UNSIGNED_SHORT, nullptr);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+		glDisableVertexAttribArray(2);
+	}
+
+	void MyGLRenderer::renderTexturedModel(Model3D* model, Material* material, GLuint* materials, float x, float y, float z, float rotX, float rotY, float rotZ, float scaleX, float scaleY, float scaleZ, float alpha){
+		glUseProgram(programId);
+
+		modelMatrix = glm::mat4(1.0f);
+		modelMatrix = glm::translate(modelMatrix, glm::vec3(x, y, z));
+		glm::vec3 rotationVector = glm::vec3(rotX, rotY, rotZ);
+		modelMatrix = glm::rotate(modelMatrix, rotationVector.z, glm::vec3(0, 0, 1));
+		modelMatrix = glm::rotate(modelMatrix, rotationVector.y, glm::vec3(0, 1, 0));
+		modelMatrix = glm::rotate(modelMatrix, rotationVector.x, glm::vec3(1, 0, 0));
+		modelMatrix = glm::scale(modelMatrix, glm::vec3(scaleX, scaleY, scaleZ));
+		//modelMatrix = glm::scale(modelMatrix, glm::vec3(Utils::getScreenRatio(), 1.0f, 1.0f));
+
+		mvMatrix = game.getCamera()->getViewMatrix() * modelMatrix;
+		mvpMatrix = projectionMatrix * game.getCamera()->getViewMatrix() * modelMatrix;
+		glUniformMatrix4fv(mvMatrixId, 1, GL_FALSE, &mvMatrix[0][0]);
+		glUniformMatrix4fv(mvpMatrixId, 1, GL_FALSE, &mvpMatrix[0][0]);
+		glUniform1f(alphaValueId, alpha);
+
+		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
+		glEnableVertexAttribArray(2);
+		glBindBuffer(GL_ARRAY_BUFFER, *(model->getVboId()));
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *(model->getIboId()));
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 32, nullptr);
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 32, reinterpret_cast<const void *>(12));
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 32, reinterpret_cast<const void *>(24));
+		for(int i = 0; i < material->getMaterialCount(); i++){
+			useTexture(*(materials + i));
+			glDrawElements(GL_TRIANGLES, material->getMatLength(i) * 6, GL_UNSIGNED_SHORT, reinterpret_cast<const void *>(material->getMatStartIndex(i) * 6));
+		}
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 		glDisableVertexAttribArray(0);

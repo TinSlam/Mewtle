@@ -52,6 +52,7 @@ namespace Mewtle{
 	        static void start(std::function<void()> clientInit, std::function<void()> clientTick, std::function<void()> clientRender, State* initState);
 	        static void tickLoop(Game*);
 	        static void drawEntity(Entity*, float alpha);
+			static void renderTexturedModel(Model3D* model, Material* material, GLuint* materials, float x, float y, float z, float rotX, float rotY, float rotZ, float scaleX, float scaleY, float scaleZ, float alpha);
 			static void render(Model3D* model, GLuint* texture, float x, float y, float z, float rotX, float rotY, float rotZ, float scaleX, float scaleY, float scaleZ, float alpha);
 	        static void drawLabel(Label*, float alpha);
 	        static void drawText(std::string, float, float, int, float, float, float);
